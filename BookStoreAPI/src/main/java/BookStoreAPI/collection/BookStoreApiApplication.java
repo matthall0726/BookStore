@@ -1,9 +1,11 @@
-package BookStoreAPI;
+package BookStoreAPI.collection;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import BookStoreAPI.repository.BookRepository;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -33,6 +35,5 @@ public class BookStoreApiApplication {
 			BookDescriptions book3 = new BookDescriptions("A Farewell to Arms", "Romance and War", etFormat.format(currentETime));
 			repository.insert(book3);
 		};
-
 	}
 }
