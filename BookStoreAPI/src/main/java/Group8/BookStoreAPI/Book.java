@@ -1,3 +1,4 @@
+package Group8.BookStoreAPI;
 
 public class Book implements Comparable<Book> {// Book class
     private String title;
