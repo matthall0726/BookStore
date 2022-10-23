@@ -24,8 +24,14 @@ public class BookStoreApiApplication {
 		ZonedDateTime currentISTime = ZonedDateTime.now();
 		ZonedDateTime currentETime = currentISTime.withZoneSameInstant(ZoneId.of("America/New_York"));
 		return args -> {
-			BookDescriptions book2 = new BookDescriptions("Matthew", "This a test!!!!", etFormat.format(currentETime));
+			BookDescriptions book1 = new BookDescriptions("LOTR", "Concerning Orcs", etFormat.format(currentETime));
+			repository.insert(book1);
+
+			BookDescriptions book2 = new BookDescriptions("Goldeneye", "Sean Connory at his Finest", etFormat.format(currentETime));
 			repository.insert(book2);
+
+			BookDescriptions book3 = new BookDescriptions("A Farewell to Arms", "Romance and War", etFormat.format(currentETime));
+			repository.insert(book3);
 		};
 
 	}
