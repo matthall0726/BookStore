@@ -1,4 +1,4 @@
-package Group8.BookStoreAPI;
+package BookStoreAPI;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

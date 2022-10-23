@@ -1,4 +1,4 @@
-package Group8.BookStoreAPI;
+package BookStoreAPI;
 
 import lombok.Data;
 import org.springframework.cglib.core.Local;

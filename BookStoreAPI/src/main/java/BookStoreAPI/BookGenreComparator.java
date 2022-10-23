@@ -1,4 +1,4 @@
-package Group8.BookStoreAPI;
+package BookStoreAPI;
 
 public class BookGenreComparator {
 

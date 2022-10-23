@@ -1,4 +1,4 @@
-package Group8.BookStoreAPI;
+package BookStoreAPI;
 import java.util.Arrays;
 
 

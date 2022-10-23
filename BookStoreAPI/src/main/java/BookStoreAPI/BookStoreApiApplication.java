@@ -1,4 +1,4 @@
-package Group8.BookStoreAPI;
+package BookStoreAPI;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
