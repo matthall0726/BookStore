@@ -1,0 +1,99 @@
+package BookStoreAPI.collection;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.Data;
+
+class Book {
+  private String name;
+  private double rating;
+  private String comment;
+  private Date timestamp;
+
+  public Book(String name) {
+    this.name = name;
+  }
+
+  public void addRating(double rating) {
+    this.rating = rating;
+  }
+
+  public void addComment(String comment) {
+    this.comment = comment;
+  }
+
+  public void addTimestamp(Date timestamp) {
+    this.timestamp = timestamp;
+  }
+
+  public double getRating() {
+    return rating;
+  }
+
+  public String getComment() {
+    return comment;
+  }
+
+  public Date getTimestamp() {
+    return timestamp;
+  }
+
+  public String toString() {
+    return "Name: " + name + " Rating: " + rating + " Comment: " + comment + " Timestamp: " + timestamp;
+  }
+}
+
+public class BookRatingCommenting {
+  public static void main(String[] args) {
+    
+    Book book0 = new Book("Standard Economics");
+    book0.addRating(5);
+    book0.addComment("Amazing book!");
+    book0.addTimestamp(new Date());
+    
+    Book book1 = new Book("Charlie and the Chocolate Factory");
+    book1.addRating(5);
+    book1.addComment("Amazing book!");
+    book1.addTimestamp(new Date());
+
+    Book book2 = new Book("90 Days in Prison");
+    book2.addRating(4);
+    book2.addComment("Good book!");
+    book2.addTimestamp(new Date());
+
+    Book book3 = new Book("Brothers in Arm");
+    book3.addRating(5);
+    book3.addComment("Best book in the series!");
+    book3.addTimestamp(new Date());
+    
+    Book book4 = new Book("Python");
+    book4.addRating(5);
+    book4.addComment("Best book in the series!");
+    book4.addTimestamp(new Date());
+
+    List<Book> bookList = new ArrayList<>();
+    bookList.add(book0);
+    bookList.add(book1);
+    bookList.add(book2);
+    bookList.add(book3);
+    bookList.add(book4);
+
+    Collections.sort(bookList, new Comparator<Book>() {
+      @Override
+      public int compare(Book b1, Book b2) {
+        return Double.compare(b2.getRating(), b1.getRating());
+      }
+    });
+
+    for (Book book : bookList) {
+      System.out.println(book);
+    }
+
+    double totalRating = 0;
+    for (Book book : bookList) {
+      totalRating += book.getRating();
+    }
+
+    double averageRating = totalRating / bookList.size();
+    System.out.println("Average rating: " + averageRating);
+  }
+}
