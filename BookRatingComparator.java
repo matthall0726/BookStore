@@ -1,5 +1,5 @@
 
-public class BookRatingComparator {
+public class BookRatingCommenting {
  Arrays.sort(books);
 
         System.out.println("Books sorted by rating:");
